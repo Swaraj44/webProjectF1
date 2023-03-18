@@ -5,7 +5,7 @@ body {
 }
 
 header {
-	background-color: #000000;
+	background-color: #0f1f47;
 	padding: 20px;
 	display: flex;
 	justify-content: space-between;
@@ -42,11 +42,11 @@ nav a:hover {
 }
 
 .hero {
-	background-image: url('hero_image.jpg');
+	background-image: url('Pictures/view-University-of-Oxford-England-Oxfordshire.webp');
 	background-size: cover;
 	background-position: center;
 	padding: 100px 20px;
-	color: #000000;
+	color: #ffffff;
 	text-align: center;
 }
 
