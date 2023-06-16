@@ -139,17 +139,16 @@ ul li ul li:hover {
     </li>
 </ul>
 
-<a href="contact_us.php">Contact Us</a>
+  <a href="contact_us.php">Contact Us</a>
 
-<a> {{ Auth::user()->name }} </a>
-
-
-
-</div>
+  <a> {{ Auth::user()->name }} </a>
 
 
 
-  </header>
+  </div>
+
+
+ </header>
 
 
 

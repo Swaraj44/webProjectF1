@@ -29,7 +29,7 @@ Route::get('/home', [Controller::class, 'home']);
 Route::get('/home11', [Controller::class, 'home11']);
 Route::get('/work2', [Controller::class, 'showCheckPageaa']);
 Route::get('/work3', [Controller::class, 'showCheckPagelog']);
-Route::get('/login', [Custom::class, 'login']);
+Route::get('/login1', [Custom::class, 'login']);
 Route::get('/reg', [Custom::class, 'registration']);
 Route::post('/register-user',[Custom::class,'regUser'])->name('register-user');
 
