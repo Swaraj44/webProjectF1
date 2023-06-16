@@ -37,7 +37,7 @@
             div a {
                 text-decoration: none;
                 color: white;
-                font-size: 20px;
+                font-size: 15px;
                 padding: 15px;
                 display: inline-block;
             }
@@ -81,49 +81,68 @@
         </style>
 
 
-        <div class="headdrop">
-            <a href="home.html">Home</a>
+       
+    <div class="headdrop">
+      <a href="home.php">Home</a>
 
-            <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">About Us</a>
-
-            <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Admissions</a>
+      <a href="About us.php">About Us</a>
 
 
-            <ul>
-                <li>
-                    <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Academics</a>
-                    <ul>
-                        <li><a href="loginpage.html">Log in</a></li>
-                        <li><a href="Regpage.html">Register</a></li>
-                        <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Link 3</a></li>
-                    </ul>
-                </li>
+
+
+      <ul>
+        <li>
+          <a>Admissions</a>
+          <ul>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <ul>
+        <li>
+          <a >Academics</a>
+          <ul>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
             </ul>
-
-            
-
-
-
-            <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Research</a>
-
-            <ul>
-                <li>
-                    <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Authenticate</a>
-                    <ul>
-                        <li><a href="loginpage.html">Log in</a></li>
-                        <li><a href="Regpage.html">Create Account</a></li>
-                       
-                    </ul>
-                </li>
-            </ul>
-
-        
-            <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Contact Us</a>
+        </li>
+      </ul>
 
 
 
-        </div>
+      <ul>
+        <li>
+          <a>Research</a>
+          <ul>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Support for researchers</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Recognition</a></li>
+          </ul>
+        </li>
+      </ul>
 
+
+      <ul>
+          <li>
+              <a>Authenticate</a>
+              <ul>
+                  <li><a href="loginpage.php">Log in</a></li>
+                  <li><a href="Regpage.php">Create Account</a></li>
+                 
+              </ul>
+          </li>
+      </ul>
+
+      <a href="contact_us.php">Contact Us</a>
+
+
+
+    </div>
 
 
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -81,11 +80,10 @@
 
 
     <div class="headdrop">
+
       <a href="home.html">Home</a>
 
-      <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">About Us</a>
-
-
+      <a href="About us.html">About Us</a>
 
 
       <ul>
@@ -101,16 +99,18 @@
 
 
 
+     
       <ul>
         <li>
           <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Academics</a>
           <ul>
-            <li><a href="loginpage.html">Log in</a></li>
-            <li><a href="Regpage.html">Register</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Link 3</a></li>
-          </ul>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
+            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
+            </ul>
         </li>
       </ul>
+
 
 
       <ul>
@@ -140,6 +140,7 @@
 
 
 
+
     </div>
 
 
@@ -158,31 +159,6 @@
     </section>
 
 
-    <section class="news">
-      <h2>Latest News</h2>
-      <div class="article">
-        <h3>Research project leads to breakthrough in cancer treatment</h3>
-        <p>A team of researchers at our university have made a significant breakthrough in cancer treatment...</p>
-        <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#" class="button">Read More</a>
-      </div>
-
-
-
-      <div class="article">
-        <h3>Alumni spotlight: John Doe, CEO of XYZ Corporation</h3>
-        <p>John Doe, a graduate of our university's business program, is now the CEO of one of the fastest-growing
-          companies...</p>
-        <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#" class="button">Read More</a>
-      </div>
-
-
-      <div class="article">
-        <h3>Student wins national award for innovation in engineering</h3>
-        <p>Jane Smith, a junior in our university's engineering program, has been awarded a national prize for her
-          innovative design...</p>
-        <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#" class="button">Read More</a>
-      </div>
-
 
       
     </section>
@@ -197,47 +173,7 @@
 
 
   <footer>
-
-    <div width="100%" height="100px">
-      <p>© University of Oxford</p>
-    </div>
-    
-
-    <style>
-      divff1{
-  
-  width: 33%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff2 {
- 
-  width: 50%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff3 {
-  
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-    </style>
-
-
-    <div width="100%" height="100px">
-      <div class="divff1">
-        INFORMATION ABOUT
-      </div>
-
-      <div class="divff2">
-        INFORMATION FOR
-      </div>
-
-      <div class="divff3">
-        QUICK LINKS
-      </div>
-
-    </div>
+    <p>© University of Oxford</p>
   </footer>
 
 
