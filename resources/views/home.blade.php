@@ -141,7 +141,19 @@ ul li ul li:hover {
 
   <a href="contact_us.php">Contact Us</a>
 
+  <!--
   <a> {{ Auth::user()->name }} </a>
+-->
+
+  @php
+    try {
+        $userName = Auth::user()->name;
+    } catch (\Throwable $e) {
+        $userName = '(None)';
+    }
+@endphp
+
+<a>{{ $userName }}</a>
 
 
 

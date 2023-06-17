@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Controller as BaseController;
 use App\Http\Controllers\Custom;
 use App\Http\Controllers\UserController;
+use App\Models\Article;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +43,10 @@ Route::post('/register',[UserController::class, 'register'])->name('register.pos
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UserController::class, 'login'])->name('login.post');
 Route::post('/logout',[UserController::class, 'logout'])->name('logout');
+
+
+
+Route::get('/articles/create', [ArticleController::class, 'create'])->name('create');
+Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+
