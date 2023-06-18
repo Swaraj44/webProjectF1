@@ -111,7 +111,8 @@ button:hover {
 
 
   <title>University Homepage</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
 
 
@@ -120,76 +121,140 @@ button:hover {
 
   <header>
     <div class="logo">
-      <img src="Pictures/University_of_Oxford-Logo.wine.svg" alt="University Logo" width="250px" height="100px">
+    <img src="{{ asset('Pictures/University_of_Oxford-Logo.wine.svg') }}" alt="University Logo"  width="150px" height="100px">
+    
     </div>
+    <style>
+      
+headdrop {
+  background-color: rgb(0, 0, 0);
+}
+
+div a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 15px;
+  display: inline-block;
+}
+
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li:hover {
+  background: #555;
+}
+
+ul li:hover ul {
+  display: block;
+}
+
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
+
+ul li ul li {
+  background: #555;
+  display: block;
+}
+
+ul li ul li a {
+  display: block !important;
+}
+
+ul li ul li:hover {
+  background: #666;
+}
+    </style>
 
 
-    <div class="headdrop">
-      <a href="home.php">Home</a>
+<div class="headdrop">
 
-      <a href="About us.php">About Us</a>
-
-
+<a href="http://127.0.0.1:8000/">Home</a>
+<a href="About us.php">About Us</a>
 
 
-      <ul>
-        <li>
-          <a>Admissions</a>
-          <ul>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
-          </ul>
-        </li>
+
+
+<ul>
+  <li>
+    <a>Admissions</a>
+    <ul>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    <a >Academics</a>
+    <ul>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
       </ul>
-
-
-      <ul>
-        <li>
-          <a >Academics</a>
-          <ul>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
-            </ul>
-        </li>
-      </ul>
+  </li>
+</ul>
 
 
 
-      <ul>
-        <li>
-          <a>Research</a>
-          <ul>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Support for researchers</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Recognition</a></li>
-          </ul>
-        </li>
-      </ul>
+<ul>
+  <li>
+    <a>Research</a>
+    <ul>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
+      <li><a href="Publish_paper.php">Publish Papers</a></li>
+      <li><a href="article.php">Research Papers</a></li>
+    </ul>
+  </li>
+</ul>
 
 
-      <ul>
-          <li>
-              <a>Authenticate</a>
-              <ul>
-                  <li><a href="loginpage.php">Log in</a></li>
-                  <li><a href="Regpage.php">Create Account</a></li>
-                 
-              </ul>
-          </li>
-      </ul>
+<ul>
+    <li>
+        <a>Authenticate</a>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/login">Log in</a></li>
+            <li><a href="http://127.0.0.1:8000/reg">Create Account</a></li>
+           
+        </ul>
+    </li>
+</ul>
 
-      <a href="contact_us.php">Contact Us</a>
-
-
-
-    </div>
+  <a href="http://127.0.0.1:8000/contactus">Contact Us</a>
 
 
+  {{--     <a>{{ Auth::user()->name }}</a>       --}}
 
 
-  </header>
+  @php
+    try {
+        $userName = Auth::user()->name;
+    } catch (\Throwable $e) {
+        $userName = '(None)';
+    }
+@endphp
+
+<a>{{ $userName }}</a>
+
+
+
+  </div>
+
+
+ </header>
 
 
 
@@ -198,6 +263,17 @@ button:hover {
 
 	<main>
 		<form>
+
+
+    <style>
+    h1 {
+        text-align: center;
+    }
+     </style>
+
+        <h1>Contact Us</h1>
+
+      
 			<label for="name">Name:</label>
 			<input type="text" id="name" name="name" required>
 			
@@ -209,9 +285,21 @@ button:hover {
 			
 			<label for="message">Message:</label>
 			<textarea id="message" name="message" required></textarea>
+
+      <br>
 			
-			<button type="submit">Send</button>
+      <input type="submit" value="Submit" class="white-submit-button">
+
+      
 		</form>
+
+    <style>
+    .white-submit-button {
+        color: white;
+        background-color: green;
+    }
+   
+    </style>
 
 		<div class="contact-info">
 			<h2>Contact Information</h2>

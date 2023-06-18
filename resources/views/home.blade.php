@@ -85,8 +85,8 @@ ul li ul li:hover {
 
 <div class="headdrop">
 
-<a href="home.php">Home</a>
-<a href="About us.php">About Us</a>
+<a href="http://127.0.0.1:8000/home">Home</a>
+<a href="http://127.0.0.1:8000/about">About Us</a>
 
 
 
@@ -95,9 +95,9 @@ ul li ul li:hover {
   <li>
     <a>Admissions</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
     </ul>
   </li>
 </ul>
@@ -107,9 +107,9 @@ ul li ul li:hover {
   <li>
     <a >Academics</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
       </ul>
   </li>
 </ul>
@@ -120,9 +120,9 @@ ul li ul li:hover {
   <li>
     <a>Research</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
-      <li><a href="Publish_paper.php">Publish Papers</a></li>
-      <li><a href="article.php">Research Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
+      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
     </ul>
   </li>
 </ul>
@@ -132,18 +132,18 @@ ul li ul li:hover {
     <li>
         <a>Authenticate</a>
         <ul>
-            <li><a href="loginpage.php">Log in</a></li>
-            <li><a href="Regpage.php">Create Account</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Log in</a></li>
+            <li><a href="http://127.0.0.1:8000/reg">Create Account</a></li>
            
         </ul>
     </li>
 </ul>
 
-  <a href="contact_us.php">Contact Us</a>
+  <a href="http://127.0.0.1:8000/contactus">Contact Us</a>
 
-  <!--
-  <a> {{ Auth::user()->name }} </a>
--->
+
+  {{--     <a>{{ Auth::user()->name }}</a>       --}}
+
 
   @php
     try {
@@ -168,7 +168,7 @@ ul li ul li:hover {
     <section class="hero">
       <h2>Welcome to Our University</h2>
       <p>Discover the power of knowledge and transform your future with our world-class education.</p>
-      <a href="About us.html" class="button">Learn More</a>
+      <a href="http://127.0.0.1:8000/about" class="button">Learn More</a>
     </section>
 
 
@@ -177,7 +177,7 @@ ul li ul li:hover {
       <div class="article">
         <h3>Research project leads to breakthrough in cancer treatment</h3>
         <p>A team of researchers at our university have made a significant breakthrough in cancer treatment...</p>
-        <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#" class="button">Read More</a>
+        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
       </div>
 
 
@@ -186,7 +186,7 @@ ul li ul li:hover {
         <h3>Alumni spotlight: John Doe, CEO of XYZ Corporation</h3>
         <p>John Doe, a graduate of our university's business program, is now the CEO of one of the fastest-growing
           companies...</p>
-        <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#" class="button">Read More</a>
+        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
       </div>
 
 
@@ -194,7 +194,7 @@ ul li ul li:hover {
         <h3>Student wins national award for innovation in engineering</h3>
         <p>Jane Smith, a junior in our university's engineering program, has been awarded a national prize for her
           innovative design...</p>
-        <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#" class="button">Read More</a>
+        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
       </div>
 
 

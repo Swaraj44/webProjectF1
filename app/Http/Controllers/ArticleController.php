@@ -15,11 +15,19 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Contracts\View\View
      */
+  
+
     public function index()
-    {
-        $articles = Article::all();
-        return view('articles.index', compact('articles'));
-    }
+{
+    $articles = Article::all();
+    //$users = Auth::user(); // Retrieve the authenticated user
+    //$users = users::all(); 
+
+    //return view('articles.index', compact('articles', 'users'));
+    
+    return view('articles.index', compact('articles'));
+}
+
 
 
 
@@ -41,6 +49,7 @@ class ArticleController extends Controller
 
     // Redirect the user after the article is saved
     return redirect('/articles')->with('success', 'Article saved successfully.');
+    //return redirect()->route('articles1')->with('success', 'Article saved successfully.');
 
 }
 
@@ -50,6 +59,13 @@ public function create(){
    return view('articles.create');
     //return view('auth.register');
 }
+
+
+public function article_show(){
+
+    return view('article_show');
+     //return view('auth.register');
+ }
 
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\User;
+use App\Models\User_Info;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Routing\Controller as BaseController;
@@ -31,7 +32,22 @@ class UserController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        // You can add additional logic here, such as sending a confirmation email
+        //  can  confirmation email
+
+
+
+
+        // Create a new article record
+        $userInfo = new User_Info();
+        $userInfo->full_name = $request->input('full_name');
+        $userInfo->user_name = $request->input('name');
+        $userInfo->email = $request->input('email');
+        $userInfo->role = $request->input('role');
+        $userInfo->save();
+
+
+
+
 
         return redirect('/')->with('success', 'Registration successful! Please log in.');
     }

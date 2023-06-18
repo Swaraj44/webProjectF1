@@ -102,29 +102,68 @@
 
 
 
+
+
+
+
+
+
+
+
+
   <main>
 
     <div class="registration-container">
         <h1>Registration</h1>
-        <form action="{{ route('register-user') }}" method="post">
+
+      
+
+        <form method="POST" action="{{ route('register.post') }}">
         @csrf
           <label for="fullname" >Full Name</label>
-          <input type="text" id="fullname" name="fullname" class="form-control" required>
+          <input type="text" id="full_name" name="full_name" class="form-control" required>
 
+                                    
           <br>
-          <label for="username" >Username</label>
-          <input type="text" id="username" name="username" class="form-control" required>
+          <label for="name" >Username</label>
+
+            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+          
 
           <br>
 
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" class="form-control" required>
+          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
 
           <br>
 
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" required>
+           <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
+          <br>
+
+          <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+
+                                
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
           <br>
 
           <label for="role">Role</label>

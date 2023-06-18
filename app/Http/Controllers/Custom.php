@@ -19,6 +19,18 @@ class Custom extends Controller
         return view('Regpage');
     }
 
+    public function contactus(){
+
+        return view('contact_us');
+    }
+
+
+    public function base(){
+
+        return view('base');
+    }
+
+
     public function regUser(Request $req){
 
        // echo "HI !";
