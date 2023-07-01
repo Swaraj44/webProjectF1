@@ -20,7 +20,6 @@
 <title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
 
@@ -89,41 +88,13 @@ ul li ul li:hover {
 <div class="headdrop">
 
 <a href="http://127.0.0.1:8000/home">Home</a>
-<a href="http://127.0.0.1:8000/about">About Us</a>
-
-
-
-
-<ul>
-  <li>
-    <a>Admissions</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
-    </ul>
-  </li>
-</ul>
-
-
-<ul>
-  <li>
-    <a >Academics</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
-      </ul>
-  </li>
-</ul>
-
 
 
 <ul>
   <li>
     <a>Research</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
+      <li><a href="http://127.0.0.1:8000/contactus">Engage With us</a></li>
       <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
       <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
     </ul>
@@ -132,15 +103,29 @@ ul li ul li:hover {
 
 
 <ul>
-    <li>
-        <a>Authenticate</a>
-        <ul>
-            <li><a href="http://127.0.0.1:8000/login">Log in</a></li>
-            <li><a href="http://127.0.0.1:8000/reg">Create Account</a></li>
-           
-        </ul>
-    </li>
+  <li>
+    <a >Notice</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">See Notice</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Publish Notice</a></li>
+      </ul>
+  </li>
 </ul>
+
+
+
+<ul>
+  <li>
+    <a>Result</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">See Result</a></li>
+      <li><a href="http://127.0.0.1:8000/articles/create">Publish Result</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+
 
   <a href="http://127.0.0.1:8000/contactus">Contact Us</a>
 
@@ -168,7 +153,7 @@ ul li ul li:hover {
 
 
 
-<!--
+     <!--
 
     <div class="article">
         <h3>Page Under Maintanance!</h3>
@@ -177,14 +162,31 @@ ul li ul li:hover {
       </div>
 
 
---> 
 
+  --> 
+
+
+<h1>User Information:</h1>
+
+@foreach ($userInfos as $userInfo)
+@if ($userInfo->role === 'teacher')
+
+<div class="article">
+<h1>User Information</h1>
+<p>User Name: {{ $userInfo->user_name }}</p>
+<p>Name     : {{ $userInfo->full_name }}</p>
+<p>Email : {{ $userInfo->email }}</p>
+<p>Role  : {{ $userInfo->role }}</p>
+
+</div>
+
+@endif
+@endforeach
 
 
   
   <style>
         body {
-            background-image: url('https://gmaoen-11fe1.kxcdn.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -218,11 +220,7 @@ ul li ul li:hover {
         }
     </style>
 
-<div class="article">
-        <h3>Page Under Maintanance!</h3>
-       
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
-      </div>
+
 
       
 
@@ -250,7 +248,7 @@ ul li ul li:hover {
 
 
 
-<!--
+      <!--
 
   <footer>
 
@@ -297,8 +295,6 @@ divff3 {
   </footer>
 
 --> 
-
-
 <footer>
     <div class="footer-container">
         <div class="footer-column">

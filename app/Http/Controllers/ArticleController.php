@@ -44,7 +44,7 @@ class ArticleController extends Controller
     $article->article_title = $validatedData['article_title'];
     $article->article = $validatedData['article'];
     $article->email = Auth::user()->email;
-    $article->user_name = Auth::user()->name; // Assuming you have a user_id column in the articles table
+    $article->user_name = Auth::user()->name; // Assuming user_id column in the articles table
     $article->save();
 
     // Redirect the user after the article is saved

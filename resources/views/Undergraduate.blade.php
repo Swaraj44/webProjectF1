@@ -15,8 +15,11 @@
 
 
 
-  <title>University Homepage</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+
+<title>University Homepage</title>
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
 
 
 
@@ -25,129 +28,140 @@
 
   <header>
     <div class="logo">
-      <img src="Pictures/University_of_Oxford-Logo.wine.svg" alt="University Logo" width="250px" height="100px">
+    <img src="{{ asset('Pictures/University_of_Oxford-Logo.wine.svg') }}" alt="University Logo"  width="150px" height="100px">
+    
     </div>
     <style>
-      headdrop {
-        background-color: rgb(0, 0, 0);
-      }
+      
+headdrop {
+  background-color: rgb(0, 0, 0);
+}
 
-      div a {
-        text-decoration: none;
-        color: white;
-        font-size: 15px;
-        padding: 15px;
-        display: inline-block;
-      }
+div a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  padding: 15px;
+  display: inline-block;
+}
 
-      ul {
-        display: inline;
-        margin: 0;
-        padding: 0;
-      }
+ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
 
-      ul li {
-        display: inline-block;
-      }
+ul li {
+  display: inline-block;
+}
 
-      ul li:hover {
-        background: #555;
-      }
+ul li:hover {
+  background: #555;
+}
 
-      ul li:hover ul {
-        display: block;
-      }
+ul li:hover ul {
+  display: block;
+}
 
-      ul li ul {
-        position: absolute;
-        width: 200px;
-        display: none;
-      }
+ul li ul {
+  position: absolute;
+  width: 200px;
+  display: none;
+}
 
-      ul li ul li {
-        background: #555;
-        display: block;
-      }
+ul li ul li {
+  background: #555;
+  display: block;
+}
 
-      ul li ul li a {
-        display: block !important;
-      }
+ul li ul li a {
+  display: block !important;
+}
 
-      ul li ul li:hover {
-        background: #666;
-      }
+ul li ul li:hover {
+  background: #666;
+}
     </style>
 
 
-    <div class="headdrop">
+<div class="headdrop">
 
-      <a href="home.html">Home</a>
+<a href="http://127.0.0.1:8000/home">Home</a>
+<a href="http://127.0.0.1:8000/about">About Us</a>
 
-      <a href="About us.html">About Us</a>
 
 
-      <ul>
-        <li>
-          <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Admissions</a>
-          <ul>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
-          </ul>
-        </li>
+
+<ul>
+  <li>
+    <a>Admissions</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+<ul>
+  <li>
+    <a >Academics</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
       </ul>
+  </li>
+</ul>
 
 
 
-     
-      <ul>
-        <li>
-          <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Academics</a>
-          <ul>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
-            </ul>
-        </li>
-      </ul>
+<ul>
+  <li>
+    <a>Research</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
+      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+<ul>
+    <li>
+        <a>Authenticate</a>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/login">Log in</a></li>
+            <li><a href="http://127.0.0.1:8000/reg">Create Account</a></li>
+           
+        </ul>
+    </li>
+</ul>
+
+  <a href="http://127.0.0.1:8000/contactus">Contact Us</a>
+
+
+  {{--     <a>{{ Auth::user()->name }}</a>       --}}
+
+
+  @php
+    try {
+        $userName = Auth::user()->name;
+    } catch (\Throwable $e) {
+        $userName = '(None)';
+    }
+@endphp
+
+<a>{{ $userName }}</a>
 
 
 
-      <ul>
-        <li>
-          <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Research</a>
-          <ul>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Support for researchers</a></li>
-            <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Recognition</a></li>
-          </ul>
-        </li>
-      </ul>
+  </div>
 
 
-      <ul>
-          <li>
-              <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Authenticate</a>
-              <ul>
-                  <li><a href="loginpage.html">Log in</a></li>
-                  <li><a href="Regpage.html">Create Account</a></li>
-                 
-              </ul>
-          </li>
-      </ul>
-
-      <a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Contact Us</a>
-
-
-
-
-    </div>
-
-
-
-
-
-  </header>
+ </header>
 
 
 

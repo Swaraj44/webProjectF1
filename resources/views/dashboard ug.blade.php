@@ -89,47 +89,10 @@ ul li ul li:hover {
 <div class="headdrop">
 
 <a href="http://127.0.0.1:8000/home">Home</a>
-<a href="http://127.0.0.1:8000/about">About Us</a>
 
-
-
-
-<ul>
-  <li>
-    <a>Admissions</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
-    </ul>
-  </li>
-</ul>
-
-
-<ul>
-  <li>
-    <a >Academics</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
-      </ul>
-  </li>
-</ul>
-
-
-
-<ul>
-  <li>
-    <a>Research</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
-      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
-      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
-    </ul>
-  </li>
-</ul>
-
+<a href="http://127.0.0.1:8000/base">Student's Info</a>
+<a href="http://127.0.0.1:8000/base">Notice</a>
+<a href="http://127.0.0.1:8000/base">Result</a>
 
 <ul>
     <li>
@@ -168,7 +131,7 @@ ul li ul li:hover {
 
 
 
-<!--
+     <!--
 
     <div class="article">
         <h3>Page Under Maintanance!</h3>
@@ -177,9 +140,8 @@ ul li ul li:hover {
       </div>
 
 
---> 
 
-
+  --> 
 
   
   <style>
@@ -250,7 +212,7 @@ ul li ul li:hover {
 
 
 
-<!--
+      <!--
 
   <footer>
 
@@ -297,8 +259,6 @@ divff3 {
   </footer>
 
 --> 
-
-
 <footer>
     <div class="footer-container">
         <div class="footer-column">
@@ -402,3 +362,5 @@ ul li a {
 </body>
 
 </html>
+
+

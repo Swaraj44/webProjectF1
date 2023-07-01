@@ -3,11 +3,11 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University of Oxford</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Oxford</title>
 </head>
 
 <body>
@@ -15,10 +15,11 @@
 
 
 
+
+
 <title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
 
@@ -164,98 +165,149 @@ ul li ul li:hover {
  </header>
 
 
-    <main>
-        <section class="hero">
-
-            <style>
-                .circular {
-                    width: 200px;
-                    height: 200px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                }
-            </style>
-
-            
 
 
+     <!--
 
-<style>
-  .bordered-text {
-    color: black;
-  
-  }
-
-  .bordered-text11 {
-    color: white;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  }
-</style>
-
-
-
-
-
-
-
-            
-            <section class="vc">
-
-                <div class="vc-photo">
-                    <img src="Pictures/vc.jpg" alt="Picture of the Vice Chancellor" class="circular">
-    
-    
-                </div>
-
-                <div class="vc-info">
-                    <h3 class="bordered-text11">Prof. Jane Doe</h3>
-                    <p class="bordered-text11">Vice Chancellor</p>
-                </div>
-            </section>
-
-            <section class="about">
-
-     <div class="article">
-
-     <h2 class="bordered-text">About Us</h2>
-                <p class="bordered-text">Welcome to the University of Oxford, a world-class institution dedicated to advancing knowledge and
-                    transforming lives. With a history dating back over a century, our university has a proud tradition
-                    of academic excellence and community engagement.</p>
-                <p class="bordered-text">At University of Oxford, we offer a wide range of undergraduate, graduate, and professional programs
-                    across a variety of fields, including business, engineering, education, health sciences, and the
-                    arts and humanities. Our faculty are leaders in their respective fields, and our students benefit
-                    from a rich and diverse learning environment that fosters critical thinking, creativity, and
-                    innovation.</p>
-                <p class="bordered-text">In addition to our academic programs, we are committed to making a positive impact on our local and
-                    global communities through research, outreach, and service. Our students, faculty, and staff are
-                    actively engaged in addressing some of the most pressing social, economic, and environmental
-                    challenges of our time.</p>
-                <p class="bordered-text">Thank you for considering University of Oxford for your educational and professional goals. We look
-                    forward to welcoming you to our community.</p>
-
+    <div class="article">
+        <h3>Page Under Maintanance!</h3>
        
+        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
       </div>
-               
-            </section>
-           
-    </main>
-    </section>
+
+
+ -->
+
+
+
+    
+            @foreach ($userInfos as $userInfo)
+
+                @if ($userInfo->user_name === Auth::user()->name)
+
+    <div class="article">
+        <h1>User Information</h1>
+        <p>User Name: {{ $userInfo->user_name }}</p>
+        <p>Name     : {{ $userInfo->full_name }}</p>
+        <p>Email : {{ $userInfo->email }}</p>
+        <p>Role  : {{ $userInfo->role }}</p>
+       
+    </div>
+
+                @endif
+            @endforeach
+
+
+
+  
+  <style>
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .article {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .article h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+      
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
 
 
 
-    </section>
-    </main>
 
 
 
 
+      <!--
+
+  <footer>
+
+    <div width="100%" height="100px">
+      <p>© University of Oxford</p>
+    </div>
+    
+
+    <style>
+      divff1{
+  
+  width: 33%;
+  height: 200px;
+  border: 3px solid #73AD21;
+}
+divff2 {
+ 
+  width: 50%;
+  height: 200px;
+  border: 3px solid #73AD21;
+}
+divff3 {
+  
+  height: 200px;
+  border: 3px solid #73AD21;
+}
+    </style>
 
 
+    <div width="100%" height="100px" display="flex">
+      <div class="divff1">
+        INFORMATION ABOUT
+      </div>
 
+      <div class="divff2">
+        INFORMATION FOR
+      </div>
 
+      <div class="divff3">
+        QUICK LINKS
+      </div>
 
-    <footer>
+    </div>
+  </footer>
+
+--> 
+<footer>
     <div class="footer-container">
         <div class="footer-column">
             <h4>Contact Us</h4>
@@ -267,17 +319,17 @@ ul li ul li:hover {
         <div class="footer-column">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="http://127.0.0.1:8000/home">Home</a></li>
-                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Admissions</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Academics</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Research</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Research</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>Social Media</h4>
             <ul class="social-media-icons">
-                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
@@ -344,12 +396,6 @@ ul li a {
 
 
 </style>
-
-
-
-
-
-
 
 
 

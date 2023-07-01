@@ -7,10 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class User_Info extends Model
 {
-    protected $table = 'user_info'; // Assuming the table name is 'user_info'
 
-    protected $fillable = ['full_name', 'user_name', 'email', 'role'];
-
-    
+    protected $table = 'user_info';
+    protected $fillable = [
+        'full_name',
+        'user_name',
+        'email',
+        'role',
+        'u_id',
+        'mobile',
+        'dept',
+        'type',
+    ];
+      
 }
 

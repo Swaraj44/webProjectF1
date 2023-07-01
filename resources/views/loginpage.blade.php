@@ -19,8 +19,12 @@
 
 
    <link rel="stylesheet" href="{{ asset('css/style login.css') }}">
-   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
+
+
+
 
 
 
@@ -84,8 +88,8 @@ ul li ul li:hover {
 
 <div class="headdrop">
 
-<a href="home.php">Home</a>
-<a href="About us.php">About Us</a>
+<a href="http://127.0.0.1:8000/home">Home</a>
+<a href="http://127.0.0.1:8000/about">About Us</a>
 
 
 
@@ -94,9 +98,9 @@ ul li ul li:hover {
   <li>
     <a>Admissions</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
     </ul>
   </li>
 </ul>
@@ -106,9 +110,9 @@ ul li ul li:hover {
   <li>
     <a >Academics</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
       </ul>
   </li>
 </ul>
@@ -119,9 +123,9 @@ ul li ul li:hover {
   <li>
     <a>Research</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
-      <li><a href="Publish_paper.php">Publish Papers</a></li>
-      <li><a href="article.php">Research Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
+      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
     </ul>
   </li>
 </ul>
@@ -131,15 +135,19 @@ ul li ul li:hover {
     <li>
         <a>Authenticate</a>
         <ul>
-            <li><a href="loginpage.php">Log in</a></li>
-            <li><a href="Regpage.php">Create Account</a></li>
+            <li><a href="http://127.0.0.1:8000/login">Log in</a></li>
+            <li><a href="http://127.0.0.1:8000/reg">Create Account</a></li>
            
         </ul>
     </li>
 </ul>
 
-  <a href="contact_us.php">Contact Us</a>
- 
+  <a href="http://127.0.0.1:8000/contactus">Contact Us</a>
+
+
+  {{--     <a>{{ Auth::user()->name }}</a>       --}}
+
+
   @php
     try {
         $userName = Auth::user()->name;
@@ -174,7 +182,7 @@ ul li ul li:hover {
       <form method="POST" action="{{ route('login.post') }}">
                             @csrf
 
-                            <label for="username">Username</label> 
+                            <label for="email">Email</label> 
         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')

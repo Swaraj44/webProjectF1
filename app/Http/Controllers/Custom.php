@@ -24,11 +24,35 @@ class Custom extends Controller
         return view('contact_us');
     }
 
+    public function about(){
+
+        return view('About us');
+    }
+
 
     public function base(){
 
         return view('base');
     }
+
+    public function dash_ug(){
+
+        return view('dashboard ug');
+     }
+
+    
+     public function dash_g(){
+
+        return view('dashboard g');
+     }
+
+     public function dash_pg(){
+
+        return view('dashboard pg');
+     }
+
+
+     
 
 
     public function regUser(Request $req){
@@ -36,4 +60,7 @@ class Custom extends Controller
        // echo "HI !";
        return view('home');
     }
+
+    
+   
 }

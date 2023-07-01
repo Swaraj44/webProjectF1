@@ -18,6 +18,14 @@ class UserController extends Controller
         return view('auth.register');
     }
 
+
+    public function showupdate()
+    {
+        return view('update profile');
+    }
+
+
+
     public function register(Request $request)
     {
         $request->validate([
@@ -43,6 +51,11 @@ class UserController extends Controller
         $userInfo->user_name = $request->input('name');
         $userInfo->email = $request->input('email');
         $userInfo->role = $request->input('role');
+
+        $userInfo->u_id = $request->input('u_id');
+        $userInfo->mobile = $request->input('mobile');
+        $userInfo->dept = $request->input('dept');
+        $userInfo->type = $request->input('type');
         $userInfo->save();
 
 
@@ -50,6 +63,37 @@ class UserController extends Controller
 
 
         return redirect('/')->with('success', 'Registration successful! Please log in.');
+    }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////update  
+
+   
+    public function edit($id)
+    {
+        $userInfo = User_Info::find($id);
+        
+        return view('update profile', ['userInfo' => $userInfo]);
+    }
+    
+
+    public function update(Request $request, $id)
+    {
+        $userInfo = UserInfo::findOrFail($id);
+        
+        $userInfo->full_name = $request->input('full_name');
+        $userInfo->user_name = $request->input('user_name');
+        $userInfo->email = $request->input('email');
+        $userInfo->role = $request->input('role');
+
+        $userInfo->u_id = $request->input('u_id');
+        $userInfo->mobile = $request->input('mobile');
+        $userInfo->dept = $request->input('dept');
+        $userInfo->type = $request->input('type');
+        
+        $userInfo->save();
+
+        return redirect()->route('profile')->with('success', 'User information updated successfully.');
     }
 
 
@@ -90,4 +134,45 @@ class UserController extends Controller
 
         return redirect('/');
     }
+
+
+    public function showUserInfo()
+   {
+    $userInfos = User_Info::all();
+    return view('profile', compact('userInfos'));
+    }
+
+    public function showUserInfost()
+    {
+     $userInfos = User_Info::all();
+     return view('profile st', compact('userInfos'));
+     }
+
+     public function showUserInfote()
+    {
+     $userInfos = User_Info::all();
+     return view('profile te', compact('userInfos'));
+     }
+
+
+     public function info_te()
+     {
+      $userInfos = User_Info::all();
+      return view('teachers info', compact('userInfos'));
+      }
+
+
+      public function dash_te(){
+
+        $userInfos = User_Info::all();
+        return view('profile te', compact('userInfos'));
+
+     }
+
+
+     public function dash_st(){
+
+        $userInfos = User_Info::all();
+        return view('profile st', compact('userInfos'));
+     }
 }
