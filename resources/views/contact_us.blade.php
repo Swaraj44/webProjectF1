@@ -262,10 +262,10 @@ ul li ul li:hover {
 
 
 	<main>
-		<form>
 
 
-    <style>
+<form action="{{ route('contact.store') }}" method="POST">
+<style>
     h1 {
         text-align: center;
     }
@@ -273,25 +273,32 @@ ul li ul li:hover {
 
         <h1>Contact Us</h1>
 
-      
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required>
-			
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required>
-			
-			<label for="subject">Subject:</label>
-			<input type="text" id="subject" name="subject" required>
-			
-			<label for="message">Message:</label>
-			<textarea id="message" name="message" required></textarea>
+    @csrf
 
-      <br>
-			
-      <input type="submit" value="Submit" class="white-submit-button">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" required>
+    </div>
 
-      
-		</form>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required>
+    </div>
+
+    <div>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="Subject" required>
+    </div>
+
+    <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="Message" required></textarea>
+    </div>
+
+    <br>
+    <button type="submit" class="white-submit-button">Submit</button>
+</form>
+
 
     <style>
     .white-submit-button {

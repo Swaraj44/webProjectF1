@@ -12,12 +12,16 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ApplicationController;
 
 
 use App\Models\Article;
 use App\Models\User_Info;
 use App\Models\Result;
 use App\Models\Notice;
+use App\Models\Contact;
+use App\Models\Application;
 
 
 /*
@@ -57,6 +61,9 @@ Route::post('/register-user',[Custom::class,'regUser'])->name('register-user');
 Route::get('/contactus', [Custom::class, 'contactus']);
 Route::get('/about', [Custom::class, 'about']);
 Route::get('/base', [Custom::class, 'base']);
+
+
+Route::get('/admission', [Custom::class, 'admission']);
 
 
 
@@ -111,6 +118,19 @@ Route::get('/results_show', [ResultController::class, 'show'])->name('showResult
 
 
 
+//Route::post('/src', [ResultController::class, 'src']);
+//Route::post('/search', [ResultController::class, 'search'])->name('search');
+
+
+Route::get('/search', function () {
+   return view('testing');
+});
+
+Route::post('/search', [ResultController::class, 'search'])->name('search');
+
+
+
+
 
 
 Route::get('/notices', [NoticeController::class, 'index'])->name('notices.index');
@@ -120,3 +140,22 @@ Route::post('/notices', [NoticeController::class, 'store'])->name('notices.store
 
 
 Route::get('/testing', [Custom::class, 'testing']);
+
+
+
+
+                                                                    // Route for the contact form
+Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+                                                                   // Route to display the saved data
+Route::get('/contact/show', [ContactController::class, 'show'])->name('contact.show');
+
+
+
+
+                                                                      // Save data page
+Route::get('/applications/create', [ApplicationController::class, 'create'])->name('applications.create');
+Route::post('/applications', [ApplicationController::class, 'store'])->name('applications.store');
+                                                                      // Show data page
+Route::get('/applications/{id}', [ApplicationController::class, 'show'])->name('applications.show');
+

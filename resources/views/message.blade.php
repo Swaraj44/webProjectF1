@@ -10,17 +10,17 @@
   <title>University of Oxford</title>
 </head>
 
-
 <body>
 
 
 
 
- 
+
+
+<title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 
 
 
@@ -92,18 +92,27 @@ ul li ul li:hover {
 <a href="http://127.0.0.1:8000/about">About Us</a>
 
 
-<a href="http://127.0.0.1:8000/admission">Admissions</a>
 
+
+<ul>
+  <li>
+    <a>Admissions</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
+    </ul>
+  </li>
+</ul>
 
 
 <ul>
   <li>
     <a >Academics</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/dash_ug">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/dash_g">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/dash_pg">Post Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/info_te">Teacher's Info</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
       </ul>
   </li>
 </ul>
@@ -114,7 +123,7 @@ ul li ul li:hover {
   <li>
     <a>Research</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/contactus">Engage With us</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
       <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
       <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
     </ul>
@@ -147,7 +156,7 @@ ul li ul li:hover {
     }
 @endphp
 
-<a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+<a>{{ $userName }}</a>
 
 
 
@@ -158,55 +167,99 @@ ul li ul li:hover {
 
 
 
-  <main>
-    <section class="hero">
 
-    <style>
-  .bordered-text {
-    color: white;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  }
-</style>
+<!--
 
-<h2 class="bordered-text">Welcome to Our University</h2>
+    <div class="article">
+        <h3>Page Under Maintanance!</h3>
+       
+        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
+      </div>
+
+
+--> 
 
 
 
   
-      <p class="bordered-text">Discover the power of knowledge and transform your future with our world-class education.</p>
-      <a href="http://127.0.0.1:8000/about" class="button">Learn More</a>
-    </section>
+  <style>
+        body {
+            background-image: url('');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .article {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+            
+        }
+
+        .article h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+    </style>
+
+<h1 text-align="center" align="center">Messages</h1>
 
 
-    <section class="news">
-      <h2>Latest News</h2>
-      <div class="article">
-        <h3>Research project leads to breakthrough in cancer treatment</h3>
-        <p>A team of researchers at our university have made a significant breakthrough in cancer treatment...</p>
-        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
-      </div>
+        <ul>
+        @foreach($contacts as $contact)
+        <div class="article">
+            <li>
+                <h3>Message On: {{$contact->Subject}}</h3>
+                <p>Message: {{ $contact->Message }}</p>
+                <p>sent by: {{ $contact->Name }} ({{ $contact->Email }})</p>
+                <p>On:{{ $contact->created_at }}</p>
+            
+            </li>
 
+            <br>
+          </div>
+        @endforeach
 
+        
+    </ul>
 
-      <div class="article">
-        <h3>Alumni spotlight: John Doe, CEO of XYZ Corporation</h3>
-        <p>John Doe, a graduate of our university's business program, is now the CEO of one of the fastest-growing
-          companies...</p>
-        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
-      </div>
-
-
-      <div class="article">
-        <h3>Student wins national award for innovation in engineering</h3>
-        <p>Jane Smith, a junior in our university's engineering program, has been awarded a national prize for her
-          innovative design...</p>
-        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
-      </div>
-
+    
+       
 
       
-    </section>
-  </main>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
 
 
@@ -216,6 +269,7 @@ ul li ul li:hover {
 
 
 <!--
+
   <footer>
 
     <div width="100%" height="100px">
@@ -260,7 +314,8 @@ divff3 {
     </div>
   </footer>
 
--->
+--> 
+
 
 <footer>
     <div class="footer-container">
@@ -274,21 +329,21 @@ divff3 {
         <div class="footer-column">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="http://127.0.0.1:8000/home">Home</a></li>
-                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Admissions</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Academics</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Research</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Research</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>Social Media</h4>
             <ul class="social-media-icons">
-                <li><a href="https://www.facebook.com/the.university.of.oxford/"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com/UniofOxford"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/oxford_uni/?hl=en"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://uk.linkedin.com/school/oxforduni/"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://www.youtube.com/oxford"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
     </div>
@@ -351,7 +406,6 @@ ul li a {
 
 
 </style>
-
 
 
 

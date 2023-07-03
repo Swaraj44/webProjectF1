@@ -67,6 +67,11 @@ class Custom extends Controller
         return view('testing');
      }
 
+     public function admission(){
+
+        return view('admission');
+     }
+
     
    
 }

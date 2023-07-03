@@ -41,4 +41,22 @@ class ResultController extends Controller
     }
 
 
+
+
+
+    public function search(Request $request)
+    {
+        $searchId = $request->input('searchId');
+        $result = Result::find($searchId);
+
+        return view('testing', compact('result','searchId'));
+      //  return view('testing', [
+     //       'searchId' => $searchId,
+      //      'result' => $result
+     //   ]);
+
+     
+    }
+
+
 }

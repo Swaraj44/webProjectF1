@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -10,18 +12,108 @@
   <title>University of Oxford</title>
 </head>
 
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: #1e3c72;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    background-color: #1e3c72;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #15405e;
+}
+
+.contact-info {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-info li {
+    margin-bottom: 5px;
+}
+</style>
+
+
+
 
 <body>
 
 
 
 
- 
+  <title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
 
 
 
@@ -88,22 +180,31 @@ ul li ul li:hover {
 
 <div class="headdrop">
 
-<a href="http://127.0.0.1:8000/home">Home</a>
-<a href="http://127.0.0.1:8000/about">About Us</a>
+<a href="http://127.0.0.1:8000/">Home</a>
+<a href="About us.php">About Us</a>
 
 
-<a href="http://127.0.0.1:8000/admission">Admissions</a>
 
+
+<ul>
+  <li>
+    <a>Admissions</a>
+    <ul>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
+    </ul>
+  </li>
+</ul>
 
 
 <ul>
   <li>
     <a >Academics</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/dash_ug">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/dash_g">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/dash_pg">Post Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/info_te">Teacher's Info</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
       </ul>
   </li>
 </ul>
@@ -114,9 +215,9 @@ ul li ul li:hover {
   <li>
     <a>Research</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/contactus">Engage With us</a></li>
-      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
-      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
+      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
+      <li><a href="Publish_paper.php">Publish Papers</a></li>
+      <li><a href="article.php">Research Papers</a></li>
     </ul>
   </li>
 </ul>
@@ -147,7 +248,7 @@ ul li ul li:hover {
     }
 @endphp
 
-<a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+<a>{{ $userName }}</a>
 
 
 
@@ -159,53 +260,82 @@ ul li ul li:hover {
 
 
   <main>
-    <section class="hero">
+
+
+	<main>
+
+<div class="registration-container">
+
+<form action="{{ route('applications.store') }}" method="POST">
+<style>
+    h1 {
+        text-align: center;
+    }
+     </style>
+
+        <h1>Apply For Admission:</h1>
+        <br>
+        <br>
+    @csrf
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" required>
+    <br>
+
+    <label for="type">Academic Level:</label>
+          <select id="type" name="type" class="form-control @error('password') is-invalid @enderror" required>
+            <option value="teacher">-- Please select --</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Graduate">Graduate</option>
+            <option value="Post Graduate">Post Graduate</option>
+          </select>
+
+          <br>
+
+    <label for="dept">Department:</label>
+    <input type="text" name="dept" id="dept" required>
+    <br>
+
+    <label for="qualification">Qualification:</label>
+    <input type="text" name="qualification" id="qualification" required>
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <br>
+
+    <label ></label>
+    <br>
+
+    <button type="submit" class="white-submit-button" align="center">Submit</button>
+</form>
+
+  </div>
+
+
 
     <style>
-  .bordered-text {
-    color: white;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-  }
-</style>
+    .white-submit-button {
+        color: white;
+        background-color: green;
+    }
+   
+    </style>
 
-<h2 class="bordered-text">Welcome to Our University</h2>
-
-
-
-  
-      <p class="bordered-text">Discover the power of knowledge and transform your future with our world-class education.</p>
-      <a href="http://127.0.0.1:8000/about" class="button">Learn More</a>
-    </section>
-
-
-    <section class="news">
-      <h2>Latest News</h2>
-      <div class="article">
-        <h3>Research project leads to breakthrough in cancer treatment</h3>
-        <p>A team of researchers at our university have made a significant breakthrough in cancer treatment...</p>
-        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
-      </div>
-
-
-
-      <div class="article">
-        <h3>Alumni spotlight: John Doe, CEO of XYZ Corporation</h3>
-        <p>John Doe, a graduate of our university's business program, is now the CEO of one of the fastest-growing
-          companies...</p>
-        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
-      </div>
-
-
-      <div class="article">
-        <h3>Student wins national award for innovation in engineering</h3>
-        <p>Jane Smith, a junior in our university's engineering program, has been awarded a national prize for her
-          innovative design...</p>
-        <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
-      </div>
+		<div class="contact-info">
+			<h2>Contact Information</h2>
+			<ul>
+				<li><strong>Address:</strong> 123 Main St, Anytown, UK</li>
+				<li><strong>Phone:</strong> (123) 456-7890</li>
+				<li><strong>Email:</strong> info@university_of_oxford.edu</li>
+			</ul>
+		</div>
+	</div>
+</main> 
 
 
       
-    </section>
+   
   </main>
 
 
@@ -215,54 +345,8 @@ ul li ul li:hover {
 
 
 
-<!--
+
   <footer>
-
-    <div width="100%" height="100px">
-      <p>© University of Oxford</p>
-    </div>
-    
-
-    <style>
-      divff1{
-  
-  width: 33%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff2 {
- 
-  width: 50%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff3 {
-  
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-    </style>
-
-
-    <div width="100%" height="100px" display="flex">
-      <div class="divff1">
-        INFORMATION ABOUT
-      </div>
-
-      <div class="divff2">
-        INFORMATION FOR
-      </div>
-
-      <div class="divff3">
-        QUICK LINKS
-      </div>
-
-    </div>
-  </footer>
-
--->
-
-<footer>
     <div class="footer-container">
         <div class="footer-column">
             <h4>Contact Us</h4>
@@ -351,6 +435,7 @@ ul li a {
 
 
 </style>
+
 
 
 
