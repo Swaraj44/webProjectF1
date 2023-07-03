@@ -183,7 +183,7 @@ ul li ul li:hover {
   
   <style>
         body {
-            background-image: url('https://gmaoen-11fe1.kxcdn.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png');
+            background-image: url('');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -193,7 +193,7 @@ ul li ul li:hover {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             margin: 20px;
-            text-align: center;
+            text-align:;
         }
 
         .article h3 {
@@ -217,29 +217,30 @@ ul li ul li:hover {
         }
     </style>
 
-<div class="article">
 
-<h1>Notices</h1>
 
-       <table>
-        <tr>
-            <th>Type</th>
-            <th>Notice</th>
-            <th>Publisher</th>
-            
-        </tr>
+<h1 text-align="center" align="center">Notices</h1>
+
+
+        <ul>
         @foreach ($notices as $notice)
-        <tr>
-            <td>{{ $notice->type }}</td>
-            <td>{{ $notice->notice }}</td>
-            <td>{{ $notice->publisher }}</td>
-        </tr>
+        <div class="article">
+            <li>
+                <h3>Notice Of: {{$notice->created_at}}</h3>
+                <p>Notice: {{$notice->notice}}</p>
+                <p>Published by: {{ $notice->publisher }} </p>
+            
+            </li>
+
+            <br>
+          </div>
         @endforeach
 
-        </table>
+        
+    </ul>
 
 
-</div>
+
 
       
 

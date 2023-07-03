@@ -61,6 +61,12 @@ class Custom extends Controller
        return view('home');
     }
 
+
+    public function testing(){
+
+        return view('testing');
+     }
+
     
    
 }

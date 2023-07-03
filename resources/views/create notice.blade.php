@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,12 +17,14 @@
 
 
 
-
-
-<title>University Homepage</title>
+  <title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style reg.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
 
 
 
@@ -168,104 +172,55 @@ ul li ul li:hover {
 
 
 
-     <!--
-
-    <div class="article">
-        <h3>Page Under Maintanance!</h3>
-       
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
-      </div>
 
 
 
-  --> 
 
-  
-  <style>
-        body {
-            background-image: url('');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
 
-        .article {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-        }
 
-        .article h3 {
-            font-size: 24px;
-            font-weight: bold;
-        }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 4px;
-            margin-top: 20px;
-        }
+  <main>
 
-        .button:hover {
-            background-color: #555;
-        }
-    </style>
+    <div class="registration-container">
+        <h1>Publish Notice</h1>
 
-<div class="article">
-       
+      
 
 <form action="{{ route('notices.store') }}" method="POST">
-    @csrf
-
-    <label for="type">Type:</label>
-    <input type="text" name="type" id="type" required>
-    <br>
+        @csrf
 
     <label for="notice">Notice:</label>
-    <textarea name="notice" id="notice" required></textarea>
-
-    <br>
-
-    <label for="publisher">Publisher:</label>
-    <input type="text" name="publisher" id="publisher" required>
+    <textarea name="notice" id="notice" class="form-control"  required></textarea>
 
     <br>
 
     <label for="dept">Department:</label>
-    <input type="text" name="dept" id="dept" required>
+    <input type="text" name="dept" id="dept" class="form-control"  required>
 
     <br>
 
+
+    <label for="publisher">Publisher:</label>
+    <input type="text" name="publisher" id="publisher" class="form-control"  required>
+
+    <br>
+    <label for="type">Academic Level:</label>
+
+    <select id="type" name="type" class="form-control @error('password') is-invalid @enderror" required>
+            <option value="">-- Please select --</option>
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Graduate">Graduate</option>
+            <option value="Post Graduate">Post Graduate</option>
+          </select>
+    <br>
+
     <button type="submit">Submit</button>
+
+
 </form>
+      </div>
 
-
-</div>
-
-      
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+  </main>
 
 
 
@@ -274,53 +229,8 @@ ul li ul li:hover {
 
 
 
-      <!--
 
-  <footer>
-
-    <div width="100%" height="100px">
-      <p>© University of Oxford</p>
-    </div>
-    
-
-    <style>
-      divff1{
-  
-  width: 33%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff2 {
  
-  width: 50%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff3 {
-  
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-    </style>
-
-
-    <div width="100%" height="100px" display="flex">
-      <div class="divff1">
-        INFORMATION ABOUT
-      </div>
-
-      <div class="divff2">
-        INFORMATION FOR
-      </div>
-
-      <div class="divff3">
-        QUICK LINKS
-      </div>
-
-    </div>
-  </footer>
-
---> 
 <footer>
     <div class="footer-container">
         <div class="footer-column">
@@ -333,17 +243,17 @@ divff3 {
         <div class="footer-column">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Admissions</a></li>
-                <li><a href="#">Academics</a></li>
-                <li><a href="#">Research</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Admissions</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Academics</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Research</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>Social Media</h4>
             <ul class="social-media-icons">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
@@ -410,6 +320,14 @@ ul li a {
 
 
 </style>
+
+
+
+
+
+
+
+
 
 
 

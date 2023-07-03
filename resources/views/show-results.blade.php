@@ -218,17 +218,15 @@ ul li ul li:hover {
 
 <div class="article">
 
-    <h1>Results</h1>
-    <table>
-        <tr>
-            <th>Type</th>
-            <th>Subject Code</th>
-            <th>Roll</th>
-            <th>Grade</th>
+ <h1 text-align="center" align="center">Results</h1>
+ <table style="text-align: center; margin: auto; padding: 30px 30px;">
+        <tr >
+            <td><h3  font-weight="bold">Subject_Code </h3></td>
+            <td><h3  font-weight="bold">Roll</h3> </td>
+            <td><h3  font-weight="bold">Grade </h3></td>
         </tr>
         @foreach ($results as $result)
         <tr>
-            <td>{{ $result->type }}</td>
             <td>{{ $result->subject_code }}</td>
             <td>{{ $result->roll }}</td>
             <td>{{ $result->grade }}</td>
@@ -238,6 +236,11 @@ ul li ul li:hover {
 
 
       </div>
+
+
+
+
+
 
       
 

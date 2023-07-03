@@ -116,3 +116,7 @@ Route::get('/results_show', [ResultController::class, 'show'])->name('showResult
 Route::get('/notices', [NoticeController::class, 'index'])->name('notices.index');
 Route::get('/notices/create', [NoticeController::class, 'create'])->name('notices.create');
 Route::post('/notices', [NoticeController::class, 'store'])->name('notices.store');
+
+
+
+Route::get('/testing', [Custom::class, 'testing']);
