@@ -27,7 +27,6 @@
 
 
 
-
   <header>
     <div class="logo">
     <img src="{{ asset('Pictures/University_of_Oxford-Logo.wine.svg') }}" alt="University Logo"  width="150px" height="100px">
@@ -89,46 +88,31 @@ ul li ul li:hover {
 <div class="headdrop">
 
 <a href="http://127.0.0.1:8000/home">Home</a>
-<a href="http://127.0.0.1:8000/about">About Us</a>
 
 
 
 
-<ul>
-  <li>
-    <a>Admissions</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
-    </ul>
-  </li>
-</ul>
-
-
-<ul>
-  <li>
-    <a >Academics</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
-      </ul>
-  </li>
-</ul>
 
 
 
-<ul>
-  <li>
-    <a>Research</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
-      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
-      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
-    </ul>
-  </li>
-</ul>
+
+@php
+        $data = 'Graduate';
+    @endphp
+
+    <!-- Your HTML code -->
+
+<a href="{{ route('student1', ['data' => $data]) }}">Student's Info</a>
+
+
+
+
+<a href="{{ route('notice1', ['data' => $data]) }}">Notice</a>
+
+
+
+<a href="{{ route('result1', ['data' => $data]) }}">Result</a>
+
 
 
 <ul>
@@ -145,6 +129,7 @@ ul li ul li:hover {
   <a href="http://127.0.0.1:8000/contactus">Contact Us</a>
 
 
+
   {{--     <a>{{ Auth::user()->name }}</a>       --}}
 
 
@@ -156,7 +141,13 @@ ul li ul li:hover {
     }
 @endphp
 
-<a>{{ $userName }}</a>
+
+
+@if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">{{ $userName }}</a>
+@else
+    <a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+@endif
 
 
 

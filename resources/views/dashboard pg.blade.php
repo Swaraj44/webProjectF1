@@ -20,6 +20,8 @@
 <title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 
 
@@ -87,12 +89,33 @@ ul li ul li:hover {
 
 <div class="headdrop">
 
-
 <a href="http://127.0.0.1:8000/home">Home</a>
 
-<a href="http://127.0.0.1:8000/base">Student's Info</a>
-<a href="http://127.0.0.1:8000/base">Notice</a>
-<a href="http://127.0.0.1:8000/base">Result</a>
+
+
+
+
+
+
+
+@php
+        $data = 'Post Graduate';
+    @endphp
+
+    <!-- Your HTML code -->
+
+<a href="{{ route('student1', ['data' => $data]) }}">Student's Info</a>
+
+
+
+
+<a href="{{ route('notice1', ['data' => $data]) }}">Notice</a>
+
+
+
+<a href="{{ route('result1', ['data' => $data]) }}">Result</a>
+
+
 
 <ul>
     <li>
@@ -108,6 +131,7 @@ ul li ul li:hover {
   <a href="http://127.0.0.1:8000/contactus">Contact Us</a>
 
 
+
   {{--     <a>{{ Auth::user()->name }}</a>       --}}
 
 
@@ -119,9 +143,13 @@ ul li ul li:hover {
     }
 @endphp
 
-<a>{{ $userName }}</a>
 
 
+@if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">{{ $userName }}</a>
+@else
+    <a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+@endif
 
 
 
@@ -261,6 +289,7 @@ divff3 {
   </footer>
 
 --> 
+
 <footer>
     <div class="footer-container">
         <div class="footer-column">
@@ -273,21 +302,21 @@ divff3 {
         <div class="footer-column">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Admissions</a></li>
-                <li><a href="#">Academics</a></li>
-                <li><a href="#">Research</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Admissions</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Academics</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Research</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>Social Media</h4>
             <ul class="social-media-icons">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.facebook.com/the.university.of.oxford/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/UniofOxford"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/oxford_uni/?hl=en"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://uk.linkedin.com/school/oxforduni/"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.youtube.com/oxford"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
     </div>
@@ -350,8 +379,6 @@ ul li a {
 
 
 </style>
-
-
 
 
 

@@ -26,9 +26,6 @@
 
 
 
-
-
-
   <header>
     <div class="logo">
     <img src="{{ asset('Pictures/University_of_Oxford-Logo.wine.svg') }}" alt="University Logo"  width="150px" height="100px">
@@ -160,7 +157,6 @@ ul li ul li:hover {
 
 
 
-
      <!--
 
     <div class="article">
@@ -176,8 +172,7 @@ ul li ul li:hover {
   
   <style>
         body {
-            background-image: url('https://gmaoen-11fe1.kxcdn.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png');
-            background-size: cover;
+          background-image: url('');background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -210,11 +205,44 @@ ul li ul li:hover {
         }
     </style>
 
+
+
+@php
+        $data1 =$data;
+@endphp
+
+
+
+
+<h1 text-align="center" align="center">Results</h1>
 <div class="article">
-        <h3>Page Under Maintanance!</h3>
-       
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
+
+
+ <table style="text-align: center; margin: auto; padding: 30px 30px;">
+        <tr >
+         
+            <td><h3  font-weight="bold">Roll</h3> </td>
+            <td><h3  font-weight="bold">Grade </h3></td>
+        </tr>
+        @foreach ($results as $result)
+        @if ($result->type == $data1)
+        <tr>
+           
+            <td>{{ $result->roll }}</td>
+            <td>{{ $result->grade }}</td>
+        </tr>
+
+        @endif
+        @endforeach
+    </table>
+
+
       </div>
+
+
+
+
+
 
       
 
@@ -289,7 +317,6 @@ divff3 {
   </footer>
 
 --> 
-
 <footer>
     <div class="footer-container">
         <div class="footer-column">
@@ -302,21 +329,21 @@ divff3 {
         <div class="footer-column">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="http://127.0.0.1:8000/home">Home</a></li>
-                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Admissions</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Academics</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Research</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Research</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>Social Media</h4>
             <ul class="social-media-icons">
-                <li><a href="https://www.facebook.com/the.university.of.oxford/"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com/UniofOxford"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/oxford_uni/?hl=en"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://uk.linkedin.com/school/oxforduni/"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://www.youtube.com/oxford"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
     </div>
@@ -379,6 +406,8 @@ ul li a {
 
 
 </style>
+
+
 
 
 

@@ -20,9 +20,6 @@
 <title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-
 
 
 
@@ -173,10 +170,45 @@ ul li ul li:hover {
 
   --> 
 
+
+
+
+@php
+        $data1 =$data;
+@endphp
+
+
+
+
+
+
+
+
+
+
+
+<h1>{{$data1}} Students Information:</h1>
+
+@foreach ($userInfos as $userInfo)
+@if ($userInfo->type === $data1)
+
+<div class="article">
+
+
+<p>Name        : {{ $userInfo->full_name }}</p>
+<p>Department  : {{ $userInfo->dept }}</p>
+<p>Email       : {{ $userInfo->email }}</p>
+
+
+</div>
+
+@endif
+@endforeach
+
+
   
   <style>
         body {
-            background-image: url('https://gmaoen-11fe1.kxcdn.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -186,7 +218,7 @@ ul li ul li:hover {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             margin: 20px;
-            text-align: center;
+            text-align: ;
         }
 
         .article h3 {
@@ -210,11 +242,7 @@ ul li ul li:hover {
         }
     </style>
 
-<div class="article">
-        <h3>Page Under Maintanance!</h3>
-       
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
-      </div>
+
 
       
 
@@ -289,7 +317,6 @@ divff3 {
   </footer>
 
 --> 
-
 <footer>
     <div class="footer-container">
         <div class="footer-column">
@@ -302,21 +329,21 @@ divff3 {
         <div class="footer-column">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="http://127.0.0.1:8000/home">Home</a></li>
-                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Admissions</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Academics</a></li>
-                <li><a href="http://127.0.0.1:8000/base">Research</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Admissions</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#">Research</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>Social Media</h4>
             <ul class="social-media-icons">
-                <li><a href="https://www.facebook.com/the.university.of.oxford/"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="https://twitter.com/UniofOxford"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/oxford_uni/?hl=en"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="https://uk.linkedin.com/school/oxforduni/"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://www.youtube.com/oxford"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
     </div>
@@ -379,6 +406,8 @@ ul li a {
 
 
 </style>
+
+
 
 
 

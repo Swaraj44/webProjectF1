@@ -184,3 +184,21 @@ Route::get('/notice1', function (Illuminate\Http\Request $request) {
    $notices = Notice::all();
    return view('Academic Notice', compact('data', 'notices'));
 })->name('notice1');
+
+
+
+// Route for displaying  and accessing the passed data
+Route::get('/result1', function (Illuminate\Http\Request $request) {
+   $data = $request->query('data');
+   $results = Result::all();
+   return view('Academic Result', compact('data', 'results'));
+})->name('result1');
+
+
+
+// Route for displaying  and accessing the passed data
+Route::get('/student1', function (Illuminate\Http\Request $request) {
+   $data = $request->query('data');
+   $userInfos = User_Info::all();
+   return view('Academic Student', compact('data', 'userInfos'));
+})->name('student1');
