@@ -15,6 +15,12 @@ class NoticeController extends Controller
         return view('show notice', compact('notices'));
     }
 
+    public function index2()
+    {
+        $notices = Notice::all();
+        return view('Admission Notice', compact('notices'));
+    }
+
     public function create()
     {
         return view('create notice');

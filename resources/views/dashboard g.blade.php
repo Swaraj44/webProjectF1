@@ -90,7 +90,26 @@ ul li ul li:hover {
 <a href="http://127.0.0.1:8000/home">Home</a>
 
 <a href="http://127.0.0.1:8000/base">Student's Info</a>
-<a href="http://127.0.0.1:8000/base">Notice</a>
+
+
+
+
+
+
+
+@php
+        $data = 'Graduate';
+    @endphp
+
+    <!-- Your HTML code -->
+
+<a href="{{ route('notice1', ['data' => $data]) }}">Notice</a>
+
+
+
+
+
+
 <a href="http://127.0.0.1:8000/base">Result</a>
 
 <ul>

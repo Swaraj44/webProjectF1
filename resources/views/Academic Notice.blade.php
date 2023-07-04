@@ -89,16 +89,21 @@ ul li ul li:hover {
 <div class="headdrop">
 
 <a href="http://127.0.0.1:8000/home">Home</a>
+<a href="http://127.0.0.1:8000/about">About Us</a>
 
 
-<a href="http://127.0.0.1:8000/notices_ad">Notices</a>
-
-<a href="http://127.0.0.1:8000/applications/create">Apply</a>
 
 
-<a href="http://127.0.0.1:8000/home">Results</a>
-
-
+<ul>
+  <li>
+    <a>Admissions</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
+    </ul>
+  </li>
+</ul>
 
 
 <ul>
@@ -113,6 +118,17 @@ ul li ul li:hover {
 </ul>
 
 
+
+<ul>
+  <li>
+    <a>Research</a>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
+      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
+    </ul>
+  </li>
+</ul>
 
 
 <ul>
@@ -152,7 +168,7 @@ ul li ul li:hover {
 
 
 
-<!--
+     <!--
 
     <div class="article">
         <h3>Page Under Maintanance!</h3>
@@ -161,14 +177,13 @@ ul li ul li:hover {
       </div>
 
 
---> 
 
-
+  --> 
 
   
   <style>
         body {
-            background-image: url('https://gmaoen-11fe1.kxcdn.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png');
+            background-image: url('');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -178,7 +193,7 @@ ul li ul li:hover {
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             margin: 20px;
-            text-align: center;
+            text-align:;
         }
 
         .article h3 {
@@ -202,11 +217,50 @@ ul li ul li:hover {
         }
     </style>
 
-<div class="article">
-        <h3>Page Under Maintanance!</h3>
+
+
+
+
+@php
+        $data1 =$data;
+@endphp
+
+
+
+
+
+
+
+
+<h1 text-align="center" align="center">Notices For {{$data1}} Students</h1>
+
+
+        <ul>
+        @foreach ($notices as $notice)
+
+        @if ($notice->type == $data1)
+ 
+    <div class="article">
+            <li>
+                <h3>Notice Of: {{$notice->created_at}}</h3>
+                <p>Notice: {{$notice->notice}}</p>
+                <p>Published by: {{ $notice->publisher }} </p>
+            
+            </li>
+
+            <br>
+          </div>
+
+    @endif
        
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
-      </div>
+        @endforeach
+
+        
+    </ul>
+
+
+  
+
 
       
 
@@ -234,7 +288,7 @@ ul li ul li:hover {
 
 
 
-<!--
+      <!--
 
   <footer>
 
@@ -281,8 +335,6 @@ divff3 {
   </footer>
 
 --> 
-
-
 <footer>
     <div class="footer-container">
         <div class="footer-column">

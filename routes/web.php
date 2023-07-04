@@ -136,7 +136,7 @@ Route::post('/search', [ResultController::class, 'search'])->name('search');
 
 
 
-
+Route::get('/notices_ad', [NoticeController::class, 'index2'])->name('notices.index2');
 Route::get('/notices', [NoticeController::class, 'index'])->name('notices.index');
 Route::get('/notices/create', [NoticeController::class, 'create'])->name('notices.create');
 Route::post('/notices', [NoticeController::class, 'store'])->name('notices.store');
@@ -172,3 +172,15 @@ Route::get('/apps', [ApplicationController::class, 'showall'])->name('applicatio
 Route::get('/user_info/{id}/edit', [UserInfoController::class, 'edit'])->name('user_info.edit');
 Route::put('/user_info/{id}', [UserInfoController::class, 'update'])->name('user_info.update');
 Route::get('/user_info/{id}', [UserInfoController::class, 'show'])->name('user_info.show');
+
+
+
+
+
+
+// Route for displaying  and accessing the passed data
+Route::get('/notice1', function (Illuminate\Http\Request $request) {
+   $data = $request->query('data');
+   $notices = Notice::all();
+   return view('Academic Notice', compact('data', 'notices'));
+})->name('notice1');
