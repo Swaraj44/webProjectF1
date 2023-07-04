@@ -166,17 +166,16 @@ ul li ul li:hover {
   --> 
 
 
-<h1>User Information:</h1>
+<h1>Teacher's Information:</h1>
 
 @foreach ($userInfos as $userInfo)
 @if ($userInfo->role === 'teacher')
 
 <div class="article">
-<h1>User Information</h1>
-<p>User Name: {{ $userInfo->user_name }}</p>
 <p>Name     : {{ $userInfo->full_name }}</p>
 <p>Email : {{ $userInfo->email }}</p>
-<p>Role  : {{ $userInfo->role }}</p>
+<p>Designation: {{ $userInfo->type }}</p>
+<p>Department : {{ $userInfo->dept }}</p>
 
 </div>
 

@@ -209,7 +209,7 @@ ul li ul li:hover {
 
 
 
-<h1 text-align="center" align="center">Results</h1>
+<h1 text-align="center" align="center">{{$data14}} Results</h1>
 <div class="article">
 
 
@@ -217,7 +217,7 @@ ul li ul li:hover {
         <tr >
          
             <td><h3  font-weight="bold">Roll</h3> </td>
-            <td><h3  font-weight="bold">Grade </h3></td>
+            <td><h3  font-weight="bold">Result </h3></td>
         </tr>
      @foreach ($results as $result)
         @if ($result->type == $data14)

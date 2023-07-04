@@ -179,44 +179,50 @@ ul li ul li:hover {
 
 <div class="headdrop">
 
-<a href="http://127.0.0.1:8000/">Home</a>
-<a href="About us.php">About Us</a>
+<a href="http://127.0.0.1:8000/home">Home</a>
+<a href="http://127.0.0.1:8000/about">About Us</a>
 
 
+<a href="http://127.0.0.1:8000/admission">Admissions</a>
 
-
-<ul>
-  <li>
-    <a>Admissions</a>
-    <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Continuing Education</a></li>
-    </ul>
-  </li>
-</ul>
 
 
 <ul>
   <li>
     <a >Academics</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Undergraduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Graduate</a></li>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_ug">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_g">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_pg">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/info_te">Teacher's Info</a></li>
       </ul>
   </li>
 </ul>
 
 
+@php
+    try {
+        $userName = Auth::user()->name;
+    } catch (\Throwable $e) {
+        $userName = '(None)';
+    }
+@endphp
 
 <ul>
   <li>
     <a>Research</a>
     <ul>
-      <li><a href="file:///C:/Users/DELL/Desktop/New%20folder%20(5)/test.html#">Engage With us</a></li>
-      <li><a href="Publish_paper.php">Publish Papers</a></li>
-      <li><a href="article.php">Research Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/contactus">Engage With us</a></li>
+
+      <li>
+      @if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">Publish Papers</a>
+       @else
+    <a href="http://127.0.0.1:8000/articles/create">Publish Papers</a>
+       @endif
+
+      </li>
+      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
     </ul>
   </li>
 </ul>
@@ -247,12 +253,18 @@ ul li ul li:hover {
     }
 @endphp
 
-<a>{{ $userName }}</a>
+
+
+@if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">{{ $userName }}</a>
+@else
+    <a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+@endif
+
 
 
 
   </div>
-
 
  </header>
 

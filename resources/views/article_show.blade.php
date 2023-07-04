@@ -174,7 +174,7 @@ ul li ul li:hover {
             <li>
                 <h2>{{ $article->article_title }}</h2>
                 <p>{{ $article->article }}</p>
-                <p>Author: {{ $article->user_name }} ({{ $article->email }})</p>
+                <p>Author: {{ $article->user_name }}  ({{ $article->email }})</p>
             </li>
         @endforeach
 

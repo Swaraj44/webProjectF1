@@ -1,36 +1,3 @@
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-
-    <h1>Articles</h1>
-    <ul>
-        @foreach ($articles as $article)
-            <li>
-                <h2>{{ $article->article_title }}</h2>
-                <p>{{ $article->article }}</p>
-                <p>Author: {{ $article->user_name }} ({{ $article->email }})</p>
-            </li>
-        @endforeach
-
-        
-    </ul>
-
-    
-</body>
-</html>
-
-
--->
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -43,16 +10,17 @@
   <title>University of Oxford</title>
 </head>
 
+
 <body>
 
 
 
 
-
-
-<title>University Homepage</title>
+ 
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 
 
@@ -124,39 +92,45 @@ ul li ul li:hover {
 <a href="http://127.0.0.1:8000/about">About Us</a>
 
 
+<a href="http://127.0.0.1:8000/admission">Admissions</a>
 
-
-<ul>
-  <li>
-    <a>Admissions</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Continuing Education</a></li>
-    </ul>
-  </li>
-</ul>
 
 
 <ul>
   <li>
     <a >Academics</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_ug">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_g">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_pg">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/info_te">Teacher's Info</a></li>
       </ul>
   </li>
 </ul>
 
 
+@php
+    try {
+        $userName = Auth::user()->name;
+    } catch (\Throwable $e) {
+        $userName = '(None)';
+    }
+@endphp
 
 <ul>
   <li>
     <a>Research</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/base">Engage With us</a></li>
-      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
+      <li><a href="http://127.0.0.1:8000/contactus">Engage With us</a></li>
+
+      <li>
+      @if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">Publish Papers</a>
+       @else
+    <a href="http://127.0.0.1:8000/articles/create">Publish Papers</a>
+       @endif
+
+      </li>
       <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
     </ul>
   </li>
@@ -188,7 +162,14 @@ ul li ul li:hover {
     }
 @endphp
 
-<a>{{ $userName }}</a>
+
+
+@if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">{{ $userName }}</a>
+@else
+    <a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+@endif
+
 
 
 
@@ -209,7 +190,7 @@ ul li ul li:hover {
             <h2>{{ $article->article_title }}</h2>
             <p>{{ $article->article }}</p>
             <p>Author: {{ $article->user_name }} ({{ $article->email }})</p>
-            <a href="http://127.0.0.1:8000/base" class="button">Read More</a>
+            <a href="https://www.researchgate.net/" class="button">Read More</a>
       </div>
         @endforeach
 
