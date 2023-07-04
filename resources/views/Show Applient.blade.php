@@ -220,16 +220,23 @@ ul li ul li:hover {
         }
     </style>
 
-<div class="article">
+
 <h2>Application Details</h2>
 
+@foreach ($applications as $application)
+<div class="article">
 <p><strong>Name:</strong> {{ $application->name }}</p>
 <p><strong>Application For:</strong> {{ $application->type }}</p>
 <p><strong>Department:</strong> {{ $application->dept }}</p>
 <p><strong>Qualification:</strong> {{ $application->qualification }}</p>
 <p><strong>Email:</strong> {{ $application->email }}</p>
+    <hr>
+</div>
+@endforeach
 
-      </div>
+
+
+
 
       
 

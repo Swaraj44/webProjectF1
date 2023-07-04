@@ -147,7 +147,14 @@ ul li ul li:hover {
     }
 @endphp
 
-<a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+
+
+@if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">{{ $userName }}</a>
+@else
+    <a href="http://127.0.0.1:8000/profile">{{ $userName }}</a>
+@endif
+
 
 
 

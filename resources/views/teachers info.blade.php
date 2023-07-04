@@ -187,8 +187,9 @@ ul li ul li:hover {
 
 <div class="article">
 <h3>Name     : {{ $userInfo->full_name }}</h3>
-<p>Email : {{ $userInfo->email }}</p>
-<p>Role  : {{ $userInfo->role }}</p>
+<p>Email    : {{ $userInfo->email }}</p>
+<p>Designation : {{ $userInfo->type }}</p>
+<p>Department : {{ $userInfo->dept }}</p>
 
 </div>
 

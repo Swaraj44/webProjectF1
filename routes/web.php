@@ -140,7 +140,7 @@ Route::post('/search', [ResultController::class, 'search'])->name('search');
 Route::get('/notices', [NoticeController::class, 'index'])->name('notices.index');
 Route::get('/notices/create', [NoticeController::class, 'create'])->name('notices.create');
 Route::post('/notices', [NoticeController::class, 'store'])->name('notices.store');
-
+Route::get('/notices/create_ad', [NoticeController::class, 'create1'])->name('notices_ad.create');
 
 
 Route::get('/testing', [Custom::class, 'testing']);
@@ -162,6 +162,7 @@ Route::get('/applications/create', [ApplicationController::class, 'create'])->na
 Route::post('/applications', [ApplicationController::class, 'store'])->name('applications.store');
                                                                       // Show data page
 Route::get('/applications/{id}', [ApplicationController::class, 'show'])->name('applications.show');
+Route::get('/apps', [ApplicationController::class, 'showall'])->name('applications.index');
 
 
 

@@ -90,23 +90,18 @@ ul li ul li:hover {
 <a href="http://127.0.0.1:8000/home">Home</a>
 
 
-<ul>
-  <li>
-    <a>Research</a>
-    <ul>
-      <li><a href="http://127.0.0.1:8000/contactus">Engage With us</a></li>
-      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
-      <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
-    </ul>
-  </li>
-</ul>
+<a href="http://127.0.0.1:8000/contact/show">Messages</a>
+
+<a href="http://127.0.0.1:8000/apps">Applications</a>
+
+
 
 
 <ul>
   <li>
     <a >Notice</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/base">See Notice</a></li>
+      <li><a href="http://127.0.0.1:8000/notices">See Notice</a></li>
       <li><a href="http://127.0.0.1:8000/base">Publish Notice</a></li>
       </ul>
   </li>

@@ -25,5 +25,12 @@ class ApplicationController extends Controller
 
         return view('show admit_app', compact('application'));
     }
+
+    public function showall()
+    {
+        $applications = Application::all();
+
+        return view('Show Applient', compact('applications'));
+    }
 }
 

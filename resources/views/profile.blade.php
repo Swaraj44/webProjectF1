@@ -227,7 +227,7 @@ ul li ul li:hover {
          </div>
 
 
-         @elseif ($userInfo->role == 'admin')
+         @elseif ($userInfo->role == 'ADMIN')
          @php
          $data1 = $userInfo->role;
          @endphp
@@ -298,6 +298,7 @@ ul li ul li:hover {
 <p>Name     : {{ $userInfo->full_name }}</p>
 <p>Email    : {{ $userInfo->email }}</p>
 <p>Designation : {{ $userInfo->type }}</p>
+<p>Department : {{ $userInfo->dept }}</p>
 
 </div>
 <a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}"><button>Update</button></a>

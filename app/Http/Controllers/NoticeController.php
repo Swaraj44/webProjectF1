@@ -20,6 +20,11 @@ class NoticeController extends Controller
         return view('create notice');
     }
 
+    public function create1()
+    {
+        return view('Create Notice Admin');
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -35,6 +40,8 @@ class NoticeController extends Controller
             'publisher' => $request->publisher,
             'dept' => $request->dept,
         ]);
+
+        
 
         return redirect()->route('notices.index')->with('success', 'Notice created successfully.');
     }
