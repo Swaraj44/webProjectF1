@@ -14,6 +14,7 @@ use App\Http\Controllers\ResultController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\UserInfoController;
 
 
 use App\Models\Article;
@@ -22,6 +23,7 @@ use App\Models\Result;
 use App\Models\Notice;
 use App\Models\Contact;
 use App\Models\Application;
+
 
 
 /*
@@ -42,7 +44,7 @@ Route::get('/', function () {
 //Route::post("/check_a",[NController::class,'index']);
 
 Route::get('/', [Controller::class, 'home']);
-Route::get('/home', [Controller::class, 'home']);
+Route::get('/home', [Controller::class, 'home'])->name('home');
 Route::get('/home11', [Controller::class, 'home11']);
 Route::get('/work2', [Controller::class, 'showCheckPageaa']);
 Route::get('/work3', [Controller::class, 'showCheckPagelog']);
@@ -73,7 +75,8 @@ Route::post('/register',[UserController::class, 'register'])->name('register.pos
 
 Route::get('/login1', [UserController::class, 'showLoginForm'])->name('login');
 Route::post('/login1', [UserController::class, 'login'])->name('login.post');
-Route::post('/logout',[UserController::class, 'logout']);
+Route::post('/logout',[UserController::class, 'logout'])->name('logout');
+Route::get('/logout2', [UserController::class, 'logout2']);
 
 
 
@@ -106,8 +109,9 @@ Route::get('/dash_pg', [Custom::class, 'dash_pg']);
 
 
 Route::get('/dash_te', [UserController::class, 'dash_te']);
-Route::get('/dash_st', [UserController::class, 'dash_st']);
+Route::get('/info_st', [UserController::class, 'info_st']);
 Route::get('/info_te', [UserController::class, 'info_te']);
+Route::get('/dash_ad', [UserController::class, 'dash_ad']);
 
 
 
@@ -159,3 +163,11 @@ Route::post('/applications', [ApplicationController::class, 'store'])->name('app
                                                                       // Show data page
 Route::get('/applications/{id}', [ApplicationController::class, 'show'])->name('applications.show');
 
+
+
+
+
+
+Route::get('/user_info/{id}/edit', [UserInfoController::class, 'edit'])->name('user_info.edit');
+Route::put('/user_info/{id}', [UserInfoController::class, 'update'])->name('user_info.update');
+Route::get('/user_info/{id}', [UserInfoController::class, 'show'])->name('user_info.show');

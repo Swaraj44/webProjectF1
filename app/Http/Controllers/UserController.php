@@ -132,8 +132,18 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/home');
     }
+
+    // Logout method
+    public function logout2()
+    {
+        Auth::logout();
+
+        // Redirect to a specific page after logout
+        return redirect()->route('home');
+    }
+
 
 
     public function showUserInfo()
@@ -170,9 +180,15 @@ class UserController extends Controller
      }
 
 
-     public function dash_st(){
+     public function info_st(){
 
         $userInfos = User_Info::all();
         return view('profile st', compact('userInfos'));
+     }
+
+     public function dash_ad(){
+
+        $userInfos = User_Info::all();
+        return view('profile admin', compact('userInfos'));
      }
 }

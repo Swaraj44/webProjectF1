@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,11 +18,12 @@
 
 
 
-
-
-<title>University Homepage</title>
+  <title>University Homepage</title>
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/style reg.css') }}">
   <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 
 
@@ -82,6 +86,25 @@ ul li ul li a {
 ul li ul li:hover {
   background: #666;
 }
+
+.article {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+            text-align:left;
+        }
+
+        .pp {
+        
+        }
+
+        .article1 {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px;
+            text-align:center;
+        }
+
     </style>
 
 
@@ -167,91 +190,154 @@ ul li ul li:hover {
 
 
 
-     <!--
 
-    <div class="article">
-        <h3>Page Under Maintanance!</h3>
+
+
+
+
+
+
+  <main>
+
+
+
+    @php
+        $data1 = 'ff ';
+    @endphp
+
+
+
+
+
+    @foreach ($userInfos as $userInfo)
+
+    @if ($userInfo->user_name === Auth::user()->name)
+
+
+         @if ($userInfo->role == 'teacher')
+
+         @php
+         $data1 = $userInfo->role;
+         @endphp
+
+         <div class="article1">
+         <h3>Welcome Professor!</h3>
        
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
-      </div>
+         <a href="http://127.0.0.1:8000/dash_te" class="button">Enter into Teacher's Pannel</a>
+         </div>
 
 
- -->
+         @elseif ($userInfo->role == 'admin')
+         @php
+         $data1 = $userInfo->role;
+         @endphp
+         <div class="article1">
+         <h3>Welcome  Admin!</h3>
+       
+         <a href="http://127.0.0.1:8000/dash_ad" class="button">Enter into Admin's Pannel</a>
+         </div>
 
+
+
+         @else
+
+
+         @endif
+
+
+    @endif
+    @endforeach
 
 
     
-            @foreach ($userInfos as $userInfo)
 
-                @if ($userInfo->user_name === Auth::user()->name)
 
-    <div class="article">
+
+
+
+    <div class="registration-container">
         <h1>User Information</h1>
-        <p>User Name: {{ $userInfo->user_name }}</p>
-        <p>Name     : {{ $userInfo->full_name }}</p>
-        <p>Email : {{ $userInfo->email }}</p>
-        <p>Role  : {{ $userInfo->role }}</p>
-       
-    </div>
 
-                @endif
-            @endforeach
-
-
-
-  
-  <style>
-        body {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .article {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            margin: 20px;
-            text-align: center;
-        }
-
-        .article h3 {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 4px;
-            margin-top: 20px;
-        }
-
-        .button:hover {
-            background-color: #555;
-        }
-    </style>
       
 
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+        <form>
+
+        
+
+    
+        @foreach ($userInfos as $userInfo)
+
+@if ($userInfo->user_name === Auth::user()->name)
+
+
+@if ($userInfo->role == 'student')
+<!-- Content for student role -->
+<div class="article">
+<p>User Name: {{ $userInfo->user_name }}</p>
+<p>Name     : {{ $userInfo->full_name }}</p>
+<p>ID       : {{ $userInfo->u_id }}</p>
+<p>Role     : {{ $userInfo->type }} {{ $userInfo->role }}</p>
+<p>Email    : {{ $userInfo->email }}</p>
+</div>
+
+   @php
+        $data1 = $userInfo->role;
+   @endphp
+ 
+
+<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}" ><button align="center">Update</button></a>
+
+
+
+
+ @else
+<!-- Content for other roles -->
+<div class="article">
+
+<p>User Name: {{ $userInfo->user_name }}</p>
+<p>Name     : {{ $userInfo->full_name }}</p>
+<p>Email    : {{ $userInfo->email }}</p>
+<p>Designation : {{ $userInfo->type }}</p>
+
+</div>
+<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}"><button>Update</button></a>
+
+
+
+
+ @endif
+
+
+
+@endif
+@endforeach
+
+<a href="http://127.0.0.1:8000/logout2" class="pp black-link">Logout</a>
+
+<style>
+  .black-link {
+    color: black;
+}
+
+ </style>
+
+
+
+
+
+
+    
+        </form>
+
+
+
+        
+  
+
+
+      </div>
+
+  </main>
 
 
 
@@ -259,55 +345,8 @@ ul li ul li:hover {
 
 
 
-
-      <!--
 
   <footer>
-
-    <div width="100%" height="100px">
-      <p>© University of Oxford</p>
-    </div>
-    
-
-    <style>
-      divff1{
-  
-  width: 33%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff2 {
- 
-  width: 50%;
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-divff3 {
-  
-  height: 200px;
-  border: 3px solid #73AD21;
-}
-    </style>
-
-
-    <div width="100%" height="100px" display="flex">
-      <div class="divff1">
-        INFORMATION ABOUT
-      </div>
-
-      <div class="divff2">
-        INFORMATION FOR
-      </div>
-
-      <div class="divff3">
-        QUICK LINKS
-      </div>
-
-    </div>
-  </footer>
-
---> 
-<footer>
     <div class="footer-container">
         <div class="footer-column">
             <h4>Contact Us</h4>
@@ -319,21 +358,21 @@ divff3 {
         <div class="footer-column">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Admissions</a></li>
-                <li><a href="#">Academics</a></li>
-                <li><a href="#">Research</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Home</a></li>
+                <li><a href="http://127.0.0.1:8000/about">About Us</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Admissions</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Academics</a></li>
+                <li><a href="http://127.0.0.1:8000/base">Research</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h4>Social Media</h4>
             <ul class="social-media-icons">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.facebook.com/the.university.of.oxford/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/UniofOxford"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/oxford_uni/?hl=en"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://uk.linkedin.com/school/oxforduni/"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.youtube.com/oxford"><i class="fab fa-youtube"></i></a></li>
             </ul>
         </div>
     </div>
@@ -396,6 +435,11 @@ ul li a {
 
 
 </style>
+
+
+
+
+
 
 
 

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\UserInfo;
+use App\Models\User_Info;
+use App\Models\User;
+use Auth;
 
 
 class UserInfoController extends Controller
@@ -11,14 +13,14 @@ class UserInfoController extends Controller
 
     public function edit($id)
     {
-        $userInfo = UserInfo::find($id);
+        $userInfo = User_Info::find($id);
 
-        return view('user_info.edit', compact('userInfo'));
+        return view('edit info', compact('userInfo'));
     }
 
     public function update(Request $request, $id)
     {
-        $userInfo = UserInfo::find($id);
+        $userInfo = User_Info::find($id);
         $userInfo->fill($request->all());
         $userInfo->save();
 
@@ -27,9 +29,10 @@ class UserInfoController extends Controller
 
     public function show($id)
     {
-        $userInfo = UserInfo::find($id);
+       // $userInfos = User_Info::find($id);
+           $userInfos = User_Info::all();
 
-        return view('user_info.show', compact('userInfo'));
+        return view('profile', compact('userInfos'));
     }
 }
 

@@ -106,8 +106,8 @@ ul li ul li:hover {
   <li>
     <a >Notice</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/notices">See Notice</a></li>
-      <li><a href="http://127.0.0.1:8000/notices/create">Publish Notice</a></li>
+      <li><a href="http://127.0.0.1:8000/base">See Notice</a></li>
+      <li><a href="http://127.0.0.1:8000/base">Publish Notice</a></li>
       </ul>
   </li>
 </ul>
@@ -118,8 +118,8 @@ ul li ul li:hover {
   <li>
     <a>Result</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/results_show">See Result</a></li>
-      <li><a href="http://127.0.0.1:8000/results">Publish Result</a></li>
+      <li><a href="http://127.0.0.1:8000/base">See Result</a></li>
+      <li><a href="http://127.0.0.1:8000/articles/create">Publish Result</a></li>
     </ul>
   </li>
 </ul>
@@ -169,10 +169,9 @@ ul li ul li:hover {
 <h1>User Information:</h1>
 
 @foreach ($userInfos as $userInfo)
-@if ($userInfo->role === 'teacher')
+@if ($userInfo->role === 'ADMIN')
 
 <div class="article">
-<h1>User Information</h1>
 <p>User Name: {{ $userInfo->user_name }}</p>
 <p>Name     : {{ $userInfo->full_name }}</p>
 <p>Email : {{ $userInfo->email }}</p>

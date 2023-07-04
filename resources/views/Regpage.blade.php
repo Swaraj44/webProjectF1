@@ -232,12 +232,20 @@ ul li ul li:hover {
 
       <br>
 
-      <label for="type">Academic Level (Only for Students)</label>
+      <label for="type">Designation/Academic Level </label>
           <select id="type" name="type" class="form-control @error('password') is-invalid @enderror" required>
             <option value="teacher">-- Please select --</option>
+
+
+            <option value="Professor">Professor</option>
+            <option value="Assistant Professor">Assistant Professor</option>
+            <option value="Lecturer">Lecturer</option>
+
             <option value="Undergraduate">Undergraduate</option>
             <option value="Graduate">Graduate</option>
             <option value="Post Graduate">Post Graduate</option>
+
+           
           </select>
       
       <br>
