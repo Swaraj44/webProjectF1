@@ -92,13 +92,6 @@ ul li ul li:hover {
 
 
 
-
-
-
-@php
-        $data = 'Graduate';
-    @endphp
-
     <!-- Your HTML code -->
 
 <a href="{{ route('student1', ['data' => $data]) }}">Student's Info</a>

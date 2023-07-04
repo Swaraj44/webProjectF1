@@ -95,23 +95,28 @@ ul li ul li:hover {
 
 <a href="http://127.0.0.1:8000/applications/create">Apply</a>
 
+@php
+        $data22 = 'Admission';
+@endphp
 
-<a href="http://127.0.0.1:8000/home">Results</a>
+
+
+<a href="{{ route('result1', ['data' => $data22]) }}">Results</a>
 
 
 
 
-<ul>
+  <ul>
   <li>
     <a >Academics</a>
     <ul>
-      <li><a href="http://127.0.0.1:8000/base">Undergraduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Graduate</a></li>
-      <li><a href="http://127.0.0.1:8000/base">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_ug">Undergraduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_g">Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/dash_pg">Post Graduate</a></li>
+      <li><a href="http://127.0.0.1:8000/info_te">Teacher's Info</a></li>
       </ul>
   </li>
 </ul>
-
 
 
 
@@ -168,7 +173,7 @@ ul li ul li:hover {
   
   <style>
         body {
-            background-image: url('https://gmaoen-11fe1.kxcdn.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png');
+            background-image: url('https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_highlight/Admissions.jpg?itok=zRuyN_cm');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -182,7 +187,7 @@ ul li ul li:hover {
         }
 
         .article h3 {
-            font-size: 24px;
+            font-size: 35px;
             font-weight: bold;
         }
 
@@ -203,9 +208,9 @@ ul li ul li:hover {
     </style>
 
 <div class="article">
-        <h3>Page Under Maintanance!</h3>
-       
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
+        <h3>Welcome to Oxford!</h3>
+      
+        <a href="http://127.0.0.1:8000/applications/create" class="button">Click To Apply</a>
       </div>
 
       

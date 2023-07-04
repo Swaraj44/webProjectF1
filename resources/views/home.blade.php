@@ -109,13 +109,28 @@ ul li ul li:hover {
 </ul>
 
 
+@php
+    try {
+        $userName = Auth::user()->name;
+    } catch (\Throwable $e) {
+        $userName = '(None)';
+    }
+@endphp
 
 <ul>
   <li>
     <a>Research</a>
     <ul>
       <li><a href="http://127.0.0.1:8000/contactus">Engage With us</a></li>
-      <li><a href="http://127.0.0.1:8000/articles/create">Publish Papers</a></li>
+
+      <li>
+      @if ($userName === '(None)')
+    <a href="http://127.0.0.1:8000/login">Publish Papers</a>
+       @else
+    <a href="http://127.0.0.1:8000/articles/create">Publish Papers</a>
+       @endif
+
+      </li>
       <li><a href="http://127.0.0.1:8000/articles">Research Papers</a></li>
     </ul>
   </li>

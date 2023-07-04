@@ -94,11 +94,6 @@ ul li ul li:hover {
 
 
 
-
-@php
-        $data = 'Graduate';
-    @endphp
-
     <!-- Your HTML code -->
 
 <a href="{{ route('student1', ['data' => $data]) }}">Student's Info</a>
@@ -208,7 +203,7 @@ ul li ul li:hover {
 
 
 @php
-        $data1 =$data;
+        $data14 =$data;
 @endphp
 
 
@@ -224,16 +219,17 @@ ul li ul li:hover {
             <td><h3  font-weight="bold">Roll</h3> </td>
             <td><h3  font-weight="bold">Grade </h3></td>
         </tr>
-        @foreach ($results as $result)
-        @if ($result->type == $data1)
+     @foreach ($results as $result)
+        @if ($result->type == $data14)
         <tr>
+           
            
             <td>{{ $result->roll }}</td>
             <td>{{ $result->grade }}</td>
         </tr>
 
         @endif
-        @endforeach
+     @endforeach
     </table>
 
 

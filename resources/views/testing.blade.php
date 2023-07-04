@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -184,53 +183,103 @@ ul li ul li:hover {
 
       
 
-        <form>
+        <form action="{{ route('user_info.update', $userInfo->id) }}" method="POST">
+         @csrf
+         @method('PUT')
+          <label for="fullname" >Full Name</label>
+          <input type="text" id="full_name" name="full_name" class="form-control" required>
 
+                                    
+          <br>
+          <label for="name" >Username</label>
+
+            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+          
+
+      <br>
+          
+            <label for="u_id">ID Number</label>
+            <input type="text" name="u_id" class="form-control @error('password') is-invalid @enderror" id="u_id" required>
+
+      <br>
         
 
-    
-        @foreach ($userInfos as $userInfo)
+          <label for="email">Email</label>
+          <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-@if ($userInfo->user_name === Auth::user()->name)
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
 
-
-@if ($userInfo->role == 'student')
-<!-- Content for student role -->
-<div class="article">
-<h1>User Information</h1>
-<p>User Name: {{ $userInfo->user_name }}</p>
-<p>Name     : {{ $userInfo->full_name }}</p>
-<p>Email : {{ $userInfo->email }}</p>
-<p>Role  : {{ $userInfo->role }}</p>
-
-<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}"><button>Update</button></a>
-
-</div>
+      <br>
 
 
- @else
-<!-- Content for other roles -->
-<div class="article">
-<h1>User Information</h1>
-<p>User Name: {{ $userInfo->user_name }}</p>
-<p>Name     : {{ $userInfo->full_name }}</p>
-<p>Email    : {{ $userInfo->email }}</p>
-<p>Designation : {{ $userInfo->role }}</p>
+          <label for="mobile">Mobile</label>
+          <input type="text" name="mobile" class="form-control @error('password') is-invalid @enderror" id="mobile" required>
 
-<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}"><button>Update</button></a>
-
-</div>
+      <br>
 
 
- @endif
+      <label for="dept">Department</label>
+      <input type="text" name="dept" class="form-control @error('password') is-invalid @enderror" id="dept" required>
+
+      <br>
+
+      <label for="type">Designation/Academic Level </label>
+          <select id="type" name="type" class="form-control @error('password') is-invalid @enderror" required>
+            <option value="teacher">-- Please select --</option>
 
 
+            <option value="Professor">Professor</option>
+            <option value="Assistant Professor">Assistant Professor</option>
+            <option value="Lecturer">Lecturer</option>
 
-@endif
-@endforeach
+            <option value="Undergraduate">Undergraduate</option>
+            <option value="Graduate">Graduate</option>
+            <option value="Post Graduate">Post Graduate</option>
+
+           
+          </select>
+      
+      <br>
+       
+
+          <label for="password">Password</label>
+           <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+
+          <br>
+
+          <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+
+                                
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+          <br>
+
+          <label for="role">Role</label>
+          <select id="role" name="role" class="form-control @error('password') is-invalid @enderror" required>
+            <option value="">-- Please select --</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+
+          <label ></label>
 
 
-    
+          <button type="submit">Register</button>
         </form>
       </div>
 

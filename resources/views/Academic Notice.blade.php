@@ -96,9 +96,7 @@ ul li ul li:hover {
 
 
 
-@php
-        $data = 'Graduate';
-    @endphp
+
 
     <!-- Your HTML code -->
 

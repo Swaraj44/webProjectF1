@@ -285,7 +285,7 @@ ul li ul li:hover {
    @endphp
  
 
-<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}" ><button align="center">Update</button></a>
+<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}" >Update</a>
 
 
 
@@ -301,7 +301,7 @@ ul li ul li:hover {
 <p>Department : {{ $userInfo->dept }}</p>
 
 </div>
-<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}"><button>Update</button></a>
+<a href="{{ route('user_info.edit', ['id' => $userInfo->id]) }}" class="pp black-link">Update</a>
 
 
 

@@ -176,7 +176,7 @@ ul li ul li:hover {
   
   <style>
         body {
-            background-image: url('https://gmaoen-11fe1.kxcdn.com/wp-content/uploads/etablir-un-plan-de-maintenance-preventive-efficace.png');
+            background-image: url('https://www.ox.ac.uk/sites/files/oxford/media_wysiwyg/Oxford_PAX000121-01_SuperRes%20900.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -210,10 +210,12 @@ ul li ul li:hover {
         }
     </style>
 
-<div class="article">
-        <h3>Page Under Maintanance!</h3>
+    <div class="article">
+         <h3>Welcome to Academic Section!</h3>
+
+         <h4>Looking for notices?</h4>
        
-        <a href="http://127.0.0.1:8000/home" class="button">Back To Home</a>
+        <a href="{{ route('notice1', ['data' => $data]) }}" class="button">Click To See Notices</a>
       </div>
 
       

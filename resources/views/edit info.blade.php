@@ -177,6 +177,10 @@ ul li ul li:hover {
 
 
 <main>
+
+
+<div class="registration-container">
+        <h1>Update Info</h1>
   
 
 <form action="{{ route('user_info.update', $userInfo->id) }}" method="POST">
